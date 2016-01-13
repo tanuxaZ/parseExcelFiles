@@ -290,7 +290,7 @@ class parseFile
         if ($dh = opendir(self::PATH_UNPACK_FILE)) {
             while (($file = readdir($dh)) !== false) {
                 if (is_file(self::PATH_UNPACK_FILE . $file)) {
-                    if (time() - filemtime(self::PATH_UNPACK_FILE . $file) > self::LIFE_TIME_TMP_FILE) {
+                    if (time() - filemtime(self::PATH_UNPACK_FILE . $file) > self::LIFE_TIME_UNPACK_FILE) {
                         unlink(self::PATH_UNPACK_FILE . $file);
                     }
                 }
